@@ -42,7 +42,10 @@
 .nav-profile-bar .user-container .email {
   font-size: 12px;
 }
-
+.nav-profile-bar .theme-row {
+  justify-content: space-between;
+  margin-top: 20px;
+}
 .nav-profile-bar .buttons-wrapper {
   justify-content: space-between;
   margin: 40px 0;

@@ -11,7 +11,6 @@ const LogoutButton = () => {
     await signOut(firebaseAuth);
     navigate("/login");
     dispatch(setUser(null));
-    s;
   };
   return (
     <button

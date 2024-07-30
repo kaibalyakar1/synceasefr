@@ -18,6 +18,8 @@ import { firebaseAuth } from "../../config/firebase-config.jsx";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/authSlice.jsx";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 const index = () => {
   const { time, date } = useTime();
 
@@ -37,9 +39,25 @@ const index = () => {
     } = await signInWithPopup(firebaseAuth, provider);
     if (accessToken) {
       dispatch(setUser({ uid, displayName, email, photoURL, accessToken }));
+      await axios
+        .post(process.env.REACT_APP_API_BASE_URL + "login", null, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
+        .then((res) => {
+          const { status } = res.data;
+          if (status === "success") return navigate("/");
+
+          toast.error(message, {
+            position: "top-right",
+          });
+        })
+        .catch((err) => console.log(err));
       navigate("/");
     }
   };
+  // console.log("check", process.env.REACT_APP_API_BASE_URL);
   return (
     <>
       <div className="login-page">

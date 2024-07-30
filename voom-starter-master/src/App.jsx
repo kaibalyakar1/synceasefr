@@ -8,6 +8,8 @@ import {
 import "./index.css";
 import LoginPage from "./pages/LoginPage/index.jsx";
 import AppWrapper from "./config/AppWrapper.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,7 @@ export default function App() {
           <Route path="*" element={<HomePage />} />
         </Routes>
       </AppWrapper>
+      <ToastContainer />
     </BrowserRouter>
   );
 }

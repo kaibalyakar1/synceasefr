@@ -6,6 +6,7 @@ import { TiThMenu } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LogoutButton from "../LogoutButton/index.jsx";
+import ThemeToggle from "../ThemeToggle/index.jsx";
 const Navbar = ({ onMenuClick }) => {
   const [showProfileBar, setShowProfileBar] = useState(false);
   const { displayName, photoURL, email } =
@@ -51,15 +52,20 @@ const Navbar = ({ onMenuClick }) => {
         <div className="flex-center user-container">
           <div className="profile">
             {photoURL ? (
-              <img src={photoURL} alt="profile" />
+              <img src={photoURL} />
             ) : (
-              <img src={profilePlaceholder} alt="profile" />
+              <img src={profilePlaceholder} />
             )}
+            console.log(photoURL);
           </div>
           <div className="details">
             <h4 className="name">{displayName}</h4>
             <p className="muted email">{email}</p>
           </div>
+        </div>
+        <div className="flex-center theme-row">
+          <p className="muted">Dark Theme</p>
+          <ThemeToggle />
         </div>
         <div className="flex-center buttons-wrapper">
           {!email ? (

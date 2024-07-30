@@ -2,6 +2,7 @@ import React from "react";
 import "./NavigationButtons.css";
 import { navButtonsRoutes } from "../../data";
 import { Link } from "react-router-dom";
+
 const index = () => {
   return (
     <div className="navigation-buttons">
