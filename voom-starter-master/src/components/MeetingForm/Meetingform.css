@@ -1,0 +1,43 @@
+.create-meeting-form {
+  background: var(--bg-gradient-1);
+  box-shadow: var(--inner-glow);
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+}
+
+.create-meeting-form > .top {
+  margin-bottom: 50px;
+}
+
+.create-meeting-form > .top .title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.create-meeting-form .row {
+  justify-content: space-between;
+}
+
+.create-meeting-form label {
+  display: block;
+}
+
+.create-meeting-form .control-container {
+  margin: 10px 0;
+}
+
+.create-meeting-form > .bottom {
+  margin-top: 50px;
+}
+
+.react-datepicker,
+.react-datepicker__time {
+  background: var(---bg-gradient-1) !important;
+  color: var(--color-text) !important;
+  border: 0px !important;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+}

@@ -23,6 +23,41 @@
 </body>
 
 </html>
-<!-- <script>
-  ()
-</script> -->
+
+<script>
+  (function () {
+    const themeStorageKey = "theme";
+
+    function setThemeOnDocumentHTML(mode) {
+      document.firstElementChild.setAttribute("data-theme", mode ? "dark" : "light");
+    }
+
+    let preferDark = '(prefers-color-scheme: dark)';
+    let mql = window.matchMedia(preferDark);
+    let supportsColorSchemeQuery = mql.media === preferDark;
+    let localStorageTheme = null;
+
+    try {
+      localStorageTheme = localStorage.getItem(themeStorageKey);
+    } catch (e) {
+      // Handle any error that occurs during localStorage access
+      console.error("Error accessing localStorage:", e);
+    }
+
+    let localStorageExists = localStorageTheme !== null;
+
+    if (localStorageExists) {
+      localStorageTheme = JSON.parse(localStorageTheme);
+      setThemeOnDocumentHTML(localStorageTheme);
+    } else {
+      // Default to dark theme
+      setThemeOnDocumentHTML(true);
+      localStorage.setItem(themeStorageKey, true);
+    }
+
+    if (supportsColorSchemeQuery && !localStorageExists) {
+      setThemeOnDocumentHTML(mql.matches);
+      localStorage.setItem(themeStorageKey, mql.matches);
+    }
+  })();
+</script>

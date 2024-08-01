@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import LoginPage from "./pages/LoginPage/index.jsx";
+import NewMeetingPage from "./pages/NewMeetingPage/index.jsx";
 import AppWrapper from "./config/AppWrapper.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,6 +18,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/new-meeting" element={<NewMeetingPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </AppWrapper>
