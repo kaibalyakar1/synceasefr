@@ -5,6 +5,7 @@ import { IoMdTimer } from "react-icons/io";
 import { TiVideo } from "react-icons/ti";
 import { FaSquarePlus } from "react-icons/fa6";
 import { AiFillSchedule, AiFillProfile } from "react-icons/ai";
+import { generateId } from "./config/generateId";
 
 export const sidebar = [
   {
@@ -42,7 +43,7 @@ export const navButtonsRoutes = [
   },
   {
     name: "Start meeting",
-    route: `/join/23ddff`,
+    route: `/join/${generateId(5)}`,
     icon: <FaSquarePlus />,
     color: "var(--gradient-1)",
     target: "_blank",

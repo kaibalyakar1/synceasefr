@@ -1,0 +1,12 @@
+.profile-page {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.profile-page .user-container {
+  background: var(--bg-gradient-1);
+  padding: 40px 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+}

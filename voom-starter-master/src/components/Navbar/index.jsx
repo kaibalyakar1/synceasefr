@@ -56,7 +56,7 @@ const Navbar = ({ onMenuClick }) => {
             ) : (
               <img src={profilePlaceholder} />
             )}
-            console.log(photoURL);
+            {/* console.log(photoURL); */}
           </div>
           <div className="details">
             <h4 className="name">{displayName}</h4>
